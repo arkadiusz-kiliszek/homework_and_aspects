@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.Scanner;
 
 @Component
-@Conditional(DefaultShapeCondition.class)
+//@Conditional(DefaultShapeCondition.class)
 public class Square implements Shape {
     @Override
     public double calculateArea() {
@@ -16,5 +16,10 @@ public class Square implements Shape {
         double a = scanner.nextDouble();
         System.out.println("Bok a to " + a);
         return Math.pow(a, 2);
+    }
+
+    @Override
+    public String getName() {
+        return "square";
     }
 }

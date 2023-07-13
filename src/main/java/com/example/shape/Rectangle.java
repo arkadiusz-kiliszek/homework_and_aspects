@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.Scanner;
 
 @Component
-@Conditional(RectangleCondition.class)
+//@Conditional(RectangleCondition.class)
 public class Rectangle implements Shape {
     @Override
     public double calculateArea() {
@@ -19,5 +19,10 @@ public class Rectangle implements Shape {
         System.out.println("Podaj b: ");
         double b = scanner.nextDouble();
         return a * b;
+    }
+
+    @Override
+    public String getName() {
+        return "rectangle";
     }
 }
