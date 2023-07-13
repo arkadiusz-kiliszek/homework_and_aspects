@@ -13,7 +13,7 @@ import org.springframework.util.StopWatch;
 @Component
 public class ShapeInfoAspect {
 
-    @Around("showInformationAboutShape()")
+    @Around("execution(* calculateArea(..))")
     public Object profile(ProceedingJoinPoint pjp) throws Throwable {
         StopWatch sw = new StopWatch(getClass().getSimpleName());
         try {
@@ -23,10 +23,5 @@ public class ShapeInfoAspect {
             sw.stop();
             System.out.println(sw.prettyPrint());
         }
-    }
-
-    @Pointcut("execution(public * *(..))")
-    public void showInformationAboutShape() {
-        System.out.println("a");
     }
 }
